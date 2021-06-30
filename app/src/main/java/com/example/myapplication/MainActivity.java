@@ -16,7 +16,7 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import static com.example.myapplication.R.string.copy_right;
-
+//添加代码
 
 public class MainActivity extends AppCompatActivity {
     private Button btn1=null,btn2=null;
