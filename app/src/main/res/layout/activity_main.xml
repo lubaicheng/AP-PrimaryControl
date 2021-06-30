@@ -179,5 +179,11 @@
 
 
 </LinearLayout>
-
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:layout_gravity="center"
+        android:text="退出APP"></Button>
 </LinearLayout>

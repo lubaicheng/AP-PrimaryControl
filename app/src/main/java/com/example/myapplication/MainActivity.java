@@ -2,6 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -106,6 +109,38 @@ public class MainActivity extends AppCompatActivity {
         userpwd=pwd.getText().toString();
         Toast.makeText(MainActivity.this,"用户名是："+userInfo+"输入的密码"+userpwd+"你的性别是:"+sex+"你的爱好是："+msg1+msg2+msg3,Toast.LENGTH_SHORT).show();
     }
+
+    public void click(View view) {
+        //运行一个对话框
+        //对话框的步骤：
+        /*1:普通对话框：
+        *创建对话框的builder对象，该对象用于构建一个对话框的模板
+        * builder对象,调用create()方法创建一个对话框对象，该对象调用show()方法就可以运行
+        *
+        *
+        * */
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        //构建对话框模型
+        builder.setIcon(R.mipmap.ic_launcher)
+                .setTitle("退出！")
+                .setMessage("确定退出？不再玩一会？")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        MainActivity.this.finish();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        builder.create().show();
+
+    }
+
 
     /*
 * 按钮触发方式1：通过按钮的onclick指定点击事件触发的方法名称，方法在activity中进行定义
