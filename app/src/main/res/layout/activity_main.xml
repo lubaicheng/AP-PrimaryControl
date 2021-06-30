@@ -179,6 +179,7 @@
 
 
 </LinearLayout>
+
     <Button
         android:id="@+id/exit"
         android:layout_width="wrap_content"
@@ -186,4 +187,21 @@
         android:onClick="click"
         android:layout_gravity="center"
         android:text="退出APP"></Button>
+    <TextView
+        android:id="@+id/text1"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="调节字体大小"
+        ></TextView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click2"
+        android:layout_gravity="center"
+        android:text="设置文本大小"></Button>
+
+
+
 </LinearLayout>

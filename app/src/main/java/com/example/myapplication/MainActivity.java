@@ -13,6 +13,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private String sex;
     private CheckBox cb1,cb2,cb3;
     private String msg1,msg2,msg3;
+    private TextView text1;
 //    private RadioButton rb1,rb2;
     private String userInfo,userpwd;
     @Override
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         cb1=findViewById(R.id.cb1);
         cb2=findViewById(R.id.cb2);
         cb3=findViewById(R.id.cb3);
+        text1=findViewById(R.id.text1);
         userid=findViewById(R.id.userid);
         pwd=findViewById(R.id.pwd);
         radioGroup=findViewById(R.id.radiogroup);
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         cb3.setOnCheckedChangeListener(occl);
 
 
+
 //        btn1=findViewById(R.id.btn1);
 //        btn2=findViewById(R.id.btn2);
         /*
@@ -127,17 +131,63 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        //关闭Dialog对话框
                         dialog.dismiss();
+                        //关闭app
                         MainActivity.this.finish();
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        //关闭Dialog对话框
                         dialog.dismiss();
                     }
                 });
-        builder.create().show();
+
+        //下面也可以写成：builder.create().show();
+        AlertDialog adialog=builder.create();
+        adialog.show();
+//
+
+    }
+    int index=0;
+    public void click2(View view) {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        String[] showMsg=new String[]{"默认","小号","中号","大号"};
+        int[] textsize=new int[]{10,20,30,40};
+
+        //构建对话框模型
+        builder.setIcon(R.mipmap.ic_launcher)
+                .setTitle("调整字体大小")
+                .setSingleChoiceItems(showMsg, index, new DialogInterface.OnClickListener() {
+                    @Override
+                    //dialog这个返回的是对话框这个对象；而which：选择了哪一项，就会返回哪一项的
+                    public void onClick(DialogInterface dialog, int which) {
+                                    index=which;
+                    }
+                })
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        text1.setTextSize(textsize[index]);
+                        //关闭Dialog对话框
+                        dialog.dismiss();
+
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //关闭Dialog对话框
+                        dialog.dismiss();
+                    }
+                });
+
+        //下面也可以写成：builder.create().show();
+        AlertDialog adialog=builder.create();
+        adialog.show();
 
     }
 
