@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0747E4D5"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/注册"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_200"
+        android:text="注册"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/图片1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_gravity="center">
+
+    </ImageView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+        android:id="@+id/用户名"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户名："
+        ></TextView>
+
+    <EditText
+        android:id="@+id/userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="请输入用户名"
+        ></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/密码"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码："
+            ></TextView>
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码"
+            android:password="true"
+            ></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/性别"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="性别："
+            ></TextView>
+
+        //单选的时候要把RadioButton放到RadioGroup中
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女">
+        </RadioButton>
+    </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/爱好"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="爱好："
+            ></TextView>
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="篮球"
+            ></CheckBox>
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乒乓球"
+            ></CheckBox>
+        <CheckBox
+            android:id="@+id/cb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="网球"
+            ></CheckBox>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:onClick="myclick"
+        />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+
+        />
+
+
+</LinearLayout>
+
+</LinearLayout>
