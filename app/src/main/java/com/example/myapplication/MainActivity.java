@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         String[] showMsg=new String[]{"旅游","篮球","游泳"};
         boolean[] isCheck=new boolean[]{false,false,false};
-
+        //构建多选对话框模型
         builder.setIcon(R.mipmap.ic_launcher_round)
                 .setTitle("兴趣爱好选择")
                 .setMultiChoiceItems(showMsg, isCheck, new DialogInterface.OnMultiChoiceClickListener() {
