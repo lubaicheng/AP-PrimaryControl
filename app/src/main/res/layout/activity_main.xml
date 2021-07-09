@@ -201,6 +201,13 @@
         android:onClick="click2"
         android:layout_gravity="center"
         android:text="设置文本大小"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="click3"
+        android:layout_gravity="center"
+        android:text="多选对话框"></Button>
+
 
 
 

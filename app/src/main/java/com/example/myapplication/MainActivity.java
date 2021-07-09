@@ -158,12 +158,12 @@ public class MainActivity extends AppCompatActivity {
         String[] showMsg=new String[]{"默认","小号","中号","大号"};
         int[] textsize=new int[]{10,20,30,40};
 
-        //构建对话框模型
+        //构建单选对话框模型
         builder.setIcon(R.mipmap.ic_launcher)
                 .setTitle("调整字体大小")
                 .setSingleChoiceItems(showMsg, index, new DialogInterface.OnClickListener() {
                     @Override
-                    //dialog这个返回的是对话框这个对象；而which：选择了哪一项，就会返回哪一项的
+                    //dialog这个返回的是对话框这个对象；而which：选择了哪一项，就会返回哪一项的序号
                     public void onClick(DialogInterface dialog, int which) {
                                     index=which;
                     }
@@ -189,6 +189,37 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog adialog=builder.create();
         adialog.show();
 
+    }
+
+    public void click3(View view) {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        String[] showMsg=new String[]{"旅游","篮球","游泳"};
+        boolean[] isCheck=new boolean[]{false,false,false};
+
+        builder.setIcon(R.mipmap.ic_launcher_round)
+                .setTitle("兴趣爱好选择")
+                .setMultiChoiceItems(showMsg, isCheck, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+
+                    }
+
+                })
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog adialog=builder.create();
+        adialog.show();
     }
 
 
