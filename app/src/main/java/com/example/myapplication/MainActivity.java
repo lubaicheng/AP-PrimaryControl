@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -201,15 +202,23 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("兴趣爱好选择")
                 .setMultiChoiceItems(showMsg, isCheck, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
+                    //which:就是你选中哪一项，那么就返回这一项的序号（索引），isChecked：被点击项的选中状态如果选中，就返回true，否则false.
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-
+                        isCheck[which]=isChecked;
                     }
 
                 })
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
+                        StringBuffer sb=new StringBuffer();
+                        sb.insert(0,"选中的选项是:");
+                        for(int i =0;i<isCheck.length;i++){
+                            if (isCheck[i]==true){
+                                sb.append(showMsg[i]).append("$$$");
+                            }
+                        }
+                        Toast.makeText(MainActivity.this,sb,Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {
