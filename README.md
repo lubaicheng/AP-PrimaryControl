@@ -1,2 +1,2 @@
 # AndroidPractice
-个人学习练习AS用
+Android初级控件的使用
